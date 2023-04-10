@@ -22,5 +22,6 @@ end
 SlashCmdList["HELLO"] = HelloWorldHandler
 
 
---Need to be able to do this check on its own.
+--Need to be able to do this check on its own. PREFERABLY EVERY HOUR, as well as next addon wanting to display number of concussive shots used, +uptime kinda like DETAILS.
+
 --also want to track usage of certain spells especially slows. to increase uptime.
