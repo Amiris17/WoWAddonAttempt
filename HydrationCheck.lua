@@ -1,39 +1,22 @@
+SLASH_HELLO1 = "/water"
+SLASH_HELLO2 = "/helloworld"
 
-global y=0
-global n=0
+local function showGreeting(name)
+    local greeting = "Drink Water!, " .. name .. "!"
 
-PopupDialog["HYDRATION_CHECK"]={
-    text="Have you drank water in the past hour?",
-    button1="Yes",
-    button2="No",
-    onAccept=Function()
-        reminder_water(y=1)
+    message(greeting)
+end
 
-}
+local function HelloWorldHandler(name)
+    local nameExists = string.len(name) > 0
 
+    if(nameExists) then
+        showGreeting(name)
+    else
+        local playerName = UnitName("player")
 
-local spell_name=getspellinfo
-local concshot_count=0
-local best_wrath=0
-if (spell_name) tostring=="Concussive Shot" then
-    concshot_count=concshot_count+1
+        showGreeting(playerName)
+    end
+end
 
-if (spell_name) tostring=="5116" --Incase it is a numeric value instead.
-    concshot_count=concshot_count+1
-
-if (spell_name) tostring=="Concussive Shot" then
-    best_wrath=best_wrath+1
-    
-if (spell_name) tostring=="5116" --Incase it is a numeric value instead.
-    best_wrath=best_wrath+1
-
-
-function reminder_water(y,n):
-    if n>y:
-    /script message("DRINK WATER NOW!")
-    if y>n:
-    /script message("Good job keep it up!")
-
-
-
-    
+SlashCmdList["HELLO"] = HelloWorldHandler
