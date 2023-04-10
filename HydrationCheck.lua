@@ -20,3 +20,7 @@ local function HelloWorldHandler(name)
 end
 
 SlashCmdList["HELLO"] = HelloWorldHandler
+
+
+--Need to be able to do this check on its own.
+--also want to track usage of certain spells especially slows. to increase uptime.
