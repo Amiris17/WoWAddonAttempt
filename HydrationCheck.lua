@@ -1,3 +1,4 @@
+
 global y=0
 global n=0
 
@@ -6,6 +7,7 @@ PopupDialog["HYDRATION_CHECK"]={
     button1="Yes",
     button2="No",
     onAccept=Function()
+        reminder_water(y=1)
 
 }
 
@@ -29,3 +31,9 @@ if (spell_name) tostring=="5116" --Incase it is a numeric value instead.
 function reminder_water(y,n):
     if n>y:
     /script message("DRINK WATER NOW!")
+    if y>n:
+    /script message("Good job keep it up!")
+
+
+
+    
